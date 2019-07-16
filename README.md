@@ -1,10 +1,5 @@
 ## The Ultimate Eight Kubernetes Exam Projects
 
-All Panacloud Developers and $10K bootcampers, once you have appeared 
-in all four Kubernetes in Practice MCQ Exams you will be given the
-The Kubernetes App Development Book for review. 
-Once you have reviewed the book you can appear in the following eight exam projects.
-
 These are the ultimate practice exam projects designed to help you prepare for the CKAD exam. It's a collection of sample questions around the topics in the CKAD exam curriculum.
 
 ## The Exam Project Preparation
