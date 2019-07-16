@@ -1,0 +1,17 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: question-sixteen-pod
+  namespace: ggckad-s4
+spec:
+  containers:
+    - name: primary-container
+      image: busybox:1.28.4
+      command: ["/bin/sh"]
+      args: ["-c", "while true; do date >> /var/log.txt; sleep 5; done"]
+      volumeMounts:
+        - name: var-volume
+          mountPath: "/var/log.txt"
+  volumes:
+    - name: var-volume
+      emptyDir: {}

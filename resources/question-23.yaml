@@ -1,0 +1,17 @@
+kind: Job
+apiVersion: batch/v1
+metadata:
+  name: question-23-job
+  namespace: ggckad-s5
+spec:
+  template:
+    metadata:
+      name: question-23-pod
+      namespace: ggckad-s5
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - image: busybox:1.28.4
+          name: process-check
+          command: ["/bin/sh"]
+          args: ["-c", "count=$(ps -A | wc -l); if [ \"$count\" -lt \"8\" ]; then exit 1; else exit 0; fi"]

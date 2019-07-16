@@ -1,0 +1,9 @@
+kind: ResourceQuota
+apiVersion: v1
+metadata:
+  name: question-eight-quota
+  namespace: ggckad-s2-rq
+spec:
+  hard:
+    requests.memory: 1024m
+    requests.cpu: 1

@@ -1,0 +1,51 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: q4-pod1
+  namespace: ggckad-s1
+  labels:
+    app: alpine
+  annotations:
+    commit: 064dd40d5
+    author: Neave Cortez
+    creator: Shayna Finch
+spec:
+  containers:
+    - image: alpine
+      name: alpine
+
+---
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: q4-pod2
+  namespace: ggckad-s1
+  labels:
+    app: alpine
+  annotations:
+    commit: 03b6df416
+    author: Matthew Palmer
+    creator: Yasin Parra
+spec:
+  containers:
+    - image: alpine
+      name: alpine
+
+---
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: q4-pod3
+  namespace: ggckad-s1
+  labels:
+    app: alpine
+  annotations:
+    commit: c6b0806
+    author: Laith Reynolds
+    creator: Aran Lloyd
+spec:
+  containers:
+    - image: alpine
+      name: alpine

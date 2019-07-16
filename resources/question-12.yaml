@@ -1,0 +1,11 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: question-twelve-pod
+  namespace: ggckad-s3
+spec:
+  containers:
+    - name: app
+      image: kubegoldenguide/alpine-spin:1.0.0
+      command: ["/bin/sh"]
+      args: ["-c", "sleep 15; while true; do curl -L http://google.com >> /var/result.txt; sleep 60; done"]

@@ -1,0 +1,9 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: question-eighteen-pod
+  namespace: ggckad-s5
+spec:
+  containers:
+    - image: nginx:1.7.9
+      name: nginx

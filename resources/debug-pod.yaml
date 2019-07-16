@@ -1,0 +1,15 @@
+# In case it helps, here's a simple pod
+# to aid debugging.
+# apt-get update
+# apt-get install <package>
+kind: Pod
+apiVersion: v1
+metadata:
+  name: generic-debug-pod
+  namespace: default # Change as needed!
+spec:
+  containers:
+    - name: main
+      image: alpine:3.7
+      command: ["/bin/sh"]
+      args: ["-c", "while true; do echo \"Running...\"; sleep 30; done;"]

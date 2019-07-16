@@ -1,0 +1,19 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: question-21-deployment
+  namespace: ggckad-s5
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      question: twenty-one
+  template: 
+    metadata:
+      name: question-21-pod
+      labels:
+        question: twenty-one
+    spec:
+      containers:
+        - image: nginx:1.7.9
+          name: app-container

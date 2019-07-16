@@ -1,0 +1,75 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: question-25-pod-1
+  namespace: ggckad-s6
+  annotations:
+    contributor: Matthew Palmer
+  labels:
+    app: nginx
+    tier: back
+    question: twenty-five
+spec:
+  containers:
+    - image: nginx:1.7.9
+      name: nginx
+
+---
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: question-25-pod-2
+  namespace: ggckad-s6
+  annotations:
+    contributor: Matthew Palmer
+  labels:
+    app: nginx
+    tier: back
+    question: twenty-five
+spec:
+  containers:
+    - image: nginx:1.7.9
+      name: nginx
+
+---
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: question-25-pod-3
+  namespace: ggckad-s6
+  annotations:
+    contributor: Matthew Palmer
+  labels:
+    app: nginx
+    tier: back
+    question: twenty-five
+spec:
+  containers:
+    - image: nginx:1.7.9
+      name: nginx
+
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: question-25-backend-service
+  namespace: ggckad-s6
+  annotations:
+    contributor: Matthew Palmer
+  labels:
+    service: nginx
+    question: twenty-five
+    tier: backend
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080
+      targetPort: 80
+  selector:
+    deployment: nginx
+    question: twenty-five
+    tier: frontend

@@ -1,0 +1,11 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: question-eleven-pod
+  namespace: ggckad-s3
+spec:
+  containers:
+    - name: app
+      image: busybox:1.28.4
+      command: ["/bin/sh"]
+      args: ["-c", "mkdir -p /var/data; while true; do date > \"/var/data/$(date -u +%Y-%m-%dT%H:%M:%SZ | tr : -)\"; sleep 5; done"]

@@ -1,0 +1,21 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: question-27-database-pod
+  namespace: ggckad-s6
+spec:
+  containers:
+    - name: database
+      image: kubegoldenguide/alpine-spin:1.0.0
+
+---
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: question-27-web-pod
+  namespace: ggckad-s6
+spec:
+  containers:
+    - name: web
+      image: kubegoldenguide/alpine-spin:1.0.0

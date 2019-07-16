@@ -1,0 +1,92 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: q19-p1
+  namespace: ggckad-s5
+  labels:
+    tier: frontend
+    app: nginx
+spec:
+  containers:
+    - image: nginx:1.7.9
+      name: nginx
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: q19-p2
+  namespace: ggckad-s5
+  labels:
+    tier: backend
+    app: nginx
+spec:
+  containers:
+    - image: nginx:1.7.9
+      name: nginx
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: q19-p3
+  namespace: ggckad-s5
+  labels:
+    tier: backend
+    app: python
+spec:
+  containers:
+    - image: python:2.7-alpine
+      name: python
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: q19-p4
+  namespace: ggckad-s5
+  labels:
+    tier: frontend
+    app: python
+spec:
+  containers:
+    - image: python:2.7-alpine
+      name: python
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: q19-p5
+  namespace: ggckad-s5
+  labels:
+    app: python
+spec:
+  containers:
+    - image: python:2.7-alpine
+      name: python
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: q19-s1
+  namespace: ggckad-s5
+  labels:
+    tier: frontend
+spec:
+  selector:
+    tier: frontend
+    app: nginx
+  ports:
+    - port: 80
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: q19-s2
+  namespace: ggckad-s5
+  labels:
+    tier: backend
+spec:
+  selector:
+    tier: backend
+    app: python
+  ports:
+    - port: 8000
+
